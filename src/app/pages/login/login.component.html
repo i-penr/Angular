@@ -4,12 +4,12 @@
     </div>
     <form (ngSubmit)="login()" #loginS="ngForm">
 
-        <label for="Email">Email</label>
+        <a class="emailt" for="Email">Email</a>
         <div>
             <input type="text" class="form-control" [(ngModel)]="model.mail" name="mail" placeholder="Email" required>
         </div>
 
-        <label for="Password">Password</label>
+        <a class="pwordt" for="Password">Password</a>
         <div>
             <input type="password" class="form-control" [(ngModel)]="model.password" name="password"
                 placeholder="Password" required>
