@@ -18,8 +18,6 @@ export class LoginComponent implements OnInit {
 
   login(){
     this.api.login(this.model.mail, this.model.password)
-      .subscribe(response =>
-      this.router.navigate(['success']), err => {/* Wrong password */});
+      .subscribe(response => this.router.navigate(['success']), err => {  });
   }
-
 }

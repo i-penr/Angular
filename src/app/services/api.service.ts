@@ -12,7 +12,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  getUser(param: string) {
+  getUser(param: string) { // No configurado
     return this.http.get(`${this.address}user/${param}`);
   }
 
@@ -22,6 +22,6 @@ export class ApiService {
 
 
   login(mail: string, password: string) {
-    return this.http.post(`${this.address}user/${mail}`, { mail , password });
+    return this.http.post(`${this.address}user/${mail}`, { password });
   }
 }
