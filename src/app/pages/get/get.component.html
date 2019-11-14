@@ -1,0 +1,11 @@
+<div *ngIf="user">
+
+</div>
+
+
+<button (click)="getUsers()">Mostrar todos los usuarios</button>
+<div *ngFor="let user of users">
+      <h2> Nombre: {{ user.name }}</h2>
+      <h3> Mail: {{ user.mail }} </h3>
+</div>
+
