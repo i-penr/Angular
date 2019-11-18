@@ -21,4 +21,8 @@ export class AppComponent {
     this.router.navigateByUrl('/login');
   }
 
+  toRegister() {
+    this.router.navigateByUrl('/register');
+  }
+
 }

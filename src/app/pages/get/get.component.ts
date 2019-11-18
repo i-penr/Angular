@@ -17,7 +17,7 @@ export class GetComponent implements OnInit {
   ngOnInit() {}
 
   getUser() {
-    this.api.getUser(this.user.username).subscribe((data: User) =>{
+    this.api.getUser(this.user.name).subscribe((data: User) =>{
       console.log(data);
       this.user = data;
     });
