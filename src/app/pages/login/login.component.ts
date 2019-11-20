@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { Router } from '@angular/router';
-import { User } from '../../classes/user';
+import { User } from "../../classes/user";
 
 @Component({
   selector: 'app-login',
@@ -18,6 +18,6 @@ export class LoginComponent implements OnInit {
 
   login(){
     this.api.login(this.model.mail, this.model.password)
-      .subscribe(response => this.router.navigate(['success']), err => {  });
+      .subscribe(response => this.router.navigate(['books']), err => {  });
   }
 }

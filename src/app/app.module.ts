@@ -7,16 +7,16 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { GetComponent } from './pages/get/get.component';
 import { LoginComponent } from './pages/login/login.component';
-import { LoginSuccessComponent } from './pages/login-success/login-success.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { GetBookComponent } from './pages/get-book/get-book.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GetComponent,
     LoginComponent,
-    LoginSuccessComponent,
     RegisterComponent,
+    GetBookComponent,
   ],
   imports: [
     BrowserModule,

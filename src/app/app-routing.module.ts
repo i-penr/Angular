@@ -2,7 +2,7 @@ import { GetComponent } from './pages/get/get.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
-import { LoginSuccessComponent } from './pages/login-success/login-success.component';
+import { GetBookComponent } from './pages/get-book/get-book.component';
 import { RegisterComponent } from './pages/register/register.component';
 
 
@@ -16,8 +16,8 @@ const routes: Routes = [
     component: LoginComponent,
   },
   {
-    path: 'success',
-    component: LoginSuccessComponent,
+    path: 'books',
+    component: GetBookComponent,
   },
   {
     path: 'register',
