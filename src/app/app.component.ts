@@ -9,7 +9,7 @@ import { User } from "./classes/user";
 })
 export class AppComponent {
 
-  title = 'Login y Get de usuarios';
+  title = 'Página básica Angular';
 
   constructor(private router: Router) {}
 
