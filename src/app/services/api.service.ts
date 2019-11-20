@@ -28,6 +28,10 @@ export class ApiService {
     return this.http.post(`${this.address}user/${mail}`, { password });
   }
 
+  loggedIn() {
+    return (localStorage.getItem('token') != null);
+  }
+
   register(name: string, surname: string, mail:string, password: string, phone: string) {
     return this.http.post(`${this.address}user/`, { name, surname, mail, password, phone });
   }

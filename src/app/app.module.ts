@@ -9,6 +9,7 @@ import { GetComponent } from './pages/get/get.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { GetBookComponent } from './pages/get-book/get-book.component';
+import { AuthGuard } from './aurh/auth.guard';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { GetBookComponent } from './pages/get-book/get-book.component';
     AppRoutingModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

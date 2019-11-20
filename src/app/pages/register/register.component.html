@@ -4,29 +4,29 @@
     </div>
     <form (ngSubmit)="register()" #registerS="ngForm">
 
-        <a class="namet" for="Name">Nombre</a>
+        <a class="field" for="Name">Nombre</a>
         <div>
             <input type="text" class="form-control" [(ngModel)]="model.name" name="name"
                 placeholder="Nombre" required>
         </div>
-        <a class="surnamet" for="Surname">Apellido</a>
+        <a class="field" for="Surname">Apellido</a>
         <div>
             <input type="text" class="form-control" [(ngModel)]="model.surname" name="surname"
                 placeholder="Surname" required>
         </div>
 
-        <a class="emailt" for="Email">E-mail</a>
+        <a class="field" for="Email">E-mail</a>
         <div>
             <input type="email" class="form-control" [(ngModel)]="model.mail" name="mail" placeholder="Email" required>
         </div>
 
-        <a class="pwordt" for="Password">Contraseña</a>
+        <a class="field" for="Password">Contraseña</a>
         <div>
             <input type="password" class="form-control" [(ngModel)]="model.password" name="password"
                 placeholder="Password" required>
         </div>
 
-        <a class="phonet" for="Phone">Teléfono</a>
+        <a class="field" for="Phone">Teléfono</a>
         <div>
             <input type="text" class="form-control" [(ngModel)]="model.phone" name="phone"
                 placeholder="Teléfono" required>

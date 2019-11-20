@@ -17,7 +17,11 @@ export class LoginComponent implements OnInit {
   model = new User();
 
   login(){
-    this.api.login(this.model.mail, this.model.password)
-      .subscribe(response => this.router.navigate(['books']), err => {  });
+     this.api.login(this.model.mail, this.model.password)
+      .subscribe((response: any) => {
+        localStorage.setItem('token', response.token);
+        this.router.navigate(['books']);
+     },
+    )
   }
 }

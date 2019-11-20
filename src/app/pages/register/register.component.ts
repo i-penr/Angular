@@ -17,8 +17,12 @@ export class RegisterComponent implements OnInit {
   model = new User;
 
   register() {
-    this.api.register(this.model.name, this.model.surname, this.model.mail, this.model.password, this.model.phone)
-    .subscribe(res => this.router.navigate(['success']), err => { console.log(err); });
+      this.api.register(this.model.name, this.model.surname, this.model.mail, this.model.password, this.model.phone)
+      .subscribe((res: any) => {
+        localStorage.setItem('token', res.token);
+        this.router.navigate(['login']);
+      }, err => console.log(err)
+    );
   }
 
 }
