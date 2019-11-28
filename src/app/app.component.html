@@ -1,9 +1,12 @@
 <div class="block">
-<h1 class="text-center" id="title">{{title}}</h1>
+  <div class="title">
+    <h1 class="titleText">{{ title }}</h1>
+  </div>
   <div class="container">
     <button class="button" type="button" (click)="toGet()">GET</button>
-    <button class="button" type="button" (click)="toRegister()">REGISTRAR</button>
-    <button class="button" type="button" (click)="toLogin()">LOGIN</button>
+    <button class="button" type="button" (click)="toBooks()">LISTA DE LIBROS</button>
+    <button class="button" id="right" type="button" (click)="toRegister()">REGISTRAR</button>
+    <button class="button" id="right" type="button" (click)="toLogin()">LOGIN</button>
   </div>
-  <router-outlet></router-outlet>
+  <router-outlet class="router"></router-outlet>
 </div>

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { User } from "./../classes/user";
+import { Book } from "./../classes/book";
 
 
 @Injectable({
@@ -14,6 +15,10 @@ export class ApiService {
 
   getUser(param: string) { // No configurado
     return this.http.get(`${this.address}user/${param}`);
+  }
+
+  findBookByTitle(param: string) {
+    return this.http.get(`${this.address}book/title/${param}`);
   }
 
   getUsers() {
@@ -35,4 +40,5 @@ export class ApiService {
   register(name: string, surname: string, mail:string, password: string, phone: string) {
     return this.http.post(`${this.address}user/`, { name, surname, mail, password, phone });
   }
+
 }

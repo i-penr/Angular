@@ -1,6 +1,32 @@
 <div class="container">
-    <button (click)="getBooks()">Mostrar todos los Libros</button>
-    <div *ngFor="let book of books">
-          <h2 class="title"> Título: {{ book.title }}</h2>
+    <div class="bookfinder">
+        <form (ngSubmit)="findBook()" #findS="ngForm">
+            <input id="search" class="searchbar" type="text" name="searchbar" placeholder="Busca un libro..."
+                list="booksOpt" autocomplete="off" [(ngModel)]='bookSelected'>
+            <datalist class="datalist" id="booksOpt" name="dataL" ngDefaultControl>
+                <option *ngFor="let book of books" name="option" [value]="book.title">
+                    Autor {{ book.author }} | Desc. {{ book.description }} | Precio {{ book.price }} | Edit.
+                    {{ book.editorial }} | ISBN {{ book.isbn }}
+                </option>
+            </datalist>
+            <button class="button" type="submit" value="submit">Buscar</button>
+            <div *ngIf="bookFound">
+                <h2 class="results">Título: {{ bookFound[0].title }}</h2><br>
+                <h2 class="results">Autor: {{ bookFound[0].author }}</h2><br>
+                <h2 class="results">ISBN: {{ bookFound[0].isbn }}</h2><br>
+                <h2 class="results">Descripción: {{ bookFound[0].description }}</h2><br>
+                <h2 class="results">Editorial: {{ bookFound[0].editorial }}</h2><br>
+                <h2 class="results">Precio: {{ bookFound[0].price }} €</h2><br>
+            </div>
+        </form>
+    </div>
+
+    <br><br><br>
+
+    <button class="getButton" (click)="getBooks()">Mostrar todos los Libros</button>
+    <div *ngIf="activated">
+        <div *ngFor="let book of books; index as i">
+            <h2 class="title"> {{ i+1 }}. {{ book.title }}</h2>
+        </div>
     </div>
 </div>

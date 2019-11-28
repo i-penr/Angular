@@ -25,4 +25,8 @@ export class AppComponent {
     this.router.navigateByUrl('/register');
   }
 
+  toBooks() {
+    this.router.navigateByUrl('/books');
+  }
+
 }

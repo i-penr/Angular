@@ -1,10 +1,13 @@
 .block {
-    border: 2px solid #848484;
+    border: 2px solid black;
     margin-left: 20%;
     margin-right: 20%;
 }
-#title {
+.title {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    overflow: hidden;
+    background-color: black;
+    color: white;
     text-align: center;
 }
 .button {
