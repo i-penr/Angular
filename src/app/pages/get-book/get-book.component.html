@@ -1,6 +1,14 @@
 <div class="container">
     <div class="bookfinder">
         <form (ngSubmit)="findBook()" #findS="ngForm">
+            <select class="selector" [(ngModel)]="paramSelected" name="paramSelector" placeholder="Selec.">
+                <option value="title">Título</option>
+                <option value="author">Autor</option>
+                <option value="description">Descr.</option>
+                <option value="isbn">ISBN</option>
+                <option value="price">Precio</option>
+                <option value="publisher">Editorial</option>
+            </select>
             <input id="search" class="searchbar" type="text" name="searchbar" placeholder="Busca un libro..."
                 list="booksOpt" autocomplete="off" [(ngModel)]='bookSelected'>
             <datalist class="datalist" id="booksOpt" name="dataL" ngDefaultControl>
@@ -11,12 +19,14 @@
             </datalist>
             <button class="button" type="submit" value="submit">Buscar</button>
             <div *ngIf="bookFound">
-                <h2 class="results">Título: {{ bookFound[0].title }}</h2><br>
-                <h2 class="results">Autor: {{ bookFound[0].author }}</h2><br>
-                <h2 class="results">ISBN: {{ bookFound[0].isbn }}</h2><br>
-                <h2 class="results">Descripción: {{ bookFound[0].description }}</h2><br>
-                <h2 class="results">Editorial: {{ bookFound[0].editorial }}</h2><br>
-                <h2 class="results">Precio: {{ bookFound[0].price }} €</h2><br>
+                <div *ngFor="let book of bookFound">
+                    <h2 class="results">Título: {{ book.title }}</h2><br>
+                    <h2 class="results">Autor: {{ book.author }}</h2><br>
+                    <h2 class="results">ISBN: {{ book.isbn }}</h2><br>
+                    <h2 class="results">Descripción: {{ book.description }}</h2><br>
+                    <h2 class="results">Editorial: {{ book.editorial }}</h2><br>
+                    <h2 class="results">Precio: {{ book.price }} €</h2><br><br>
+                </div>
             </div>
         </form>
     </div>

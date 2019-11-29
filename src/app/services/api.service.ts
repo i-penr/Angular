@@ -17,8 +17,8 @@ export class ApiService {
     return this.http.get(`${this.address}user/${param}`);
   }
 
-  findBookByTitle(param: string) {
-    return this.http.get(`${this.address}book/title/${param}`);
+  findBookByParam(param1: string, param2: string) {
+    return this.http.get(`${this.address}book/${param2}/${param1}`);
   }
 
   getUsers() {

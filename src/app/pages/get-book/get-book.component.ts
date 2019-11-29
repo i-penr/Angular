@@ -14,6 +14,7 @@ export class GetBookComponent implements OnInit {
 
   books: Book[];
   bookSelected: string;
+  paramSelected: string;
   bookFound: Book;
   activated;
 
@@ -26,7 +27,7 @@ export class GetBookComponent implements OnInit {
   }
 
   findBook() {
-    this.api.findBookByTitle(this.bookSelected)
+    this.api.findBookByParam(this.bookSelected, this.paramSelected)
      .subscribe((data: Book) => {
        console.log(data);
        this.bookFound = data;

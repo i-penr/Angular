@@ -12,12 +12,20 @@ input::-webkit-calendar-picker-indicator {
 	display: none;
 }
 
+.selector {
+    padding: 1%;
+    color: white;
+    background-color: black;
+    position: relative;
+    font-size: 110%;
+    margin-left: 15%;
+    display: inline-block;
+}
 .searchbar {
     font-size: 110%;
     position: relative;
     display: inline-block;
     width: 47%;
-    margin-left: 20%;   
     padding: 1%;
 }
 
