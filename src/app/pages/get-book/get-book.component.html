@@ -1,7 +1,7 @@
 <div class="container">
     <div class="bookfinder">
         <form (ngSubmit)="findBook()" #findS="ngForm">
-            <select class="selector" [(ngModel)]="paramSelected" name="paramSelector" placeholder="Selec.">
+            <select class="selector" [(ngModel)]="paramSelected" name="paramSelector">
                 <option value="title">Título</option>
                 <option value="author">Autor</option>
                 <option value="description">Descr.</option>
