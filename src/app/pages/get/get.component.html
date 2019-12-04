@@ -1,7 +1,26 @@
-<div class="container">
-      <button (click)="getUsers()">Mostrar todos los usuarios</button>
-      <div *ngFor="let user of users">
-            <h2 class="name"> Nombre: {{ user.name }}</h2>
-            <h3 class="mail"> Mail: {{ user.mail }} </h3>
+<ng-template #content let-modal>
+      <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Lista de usuarios</h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                  <span aria-hidden="true">&times;</span>
+            </button>
       </div>
+      <div class="modal-body">
+            <button (click)="getUsers()">Mostrar Usuarios</button>
+            <div *ngFor="let user of users; index as i">
+                  <h2 class="name"> {{i+1}}. Nombre: {{ user.name }}</h2>
+                  <h3 class="mail"> Mail: {{ user.mail }} </h3>
+                  <hr>
+            </div>
+      </div>
+</ng-template>
+<div class="container text-center">
+      <h3 class="text-center">Esta página es para ver los usuarios, además de para implementar un Modal, no era
+            necesaria para el hito,
+            pero la hago para poder utilizar ng-bootstrap y acceder a los usuarios de forma sencilla.
+      </h3>
+      <button class="btn btn-block btn-outline-primary btn-dark text-light border-dark" (click)="open(content)">Mostrar
+            todos los usuarios</button>
+
+      <pre>{{closeResult}}</pre>
 </div>

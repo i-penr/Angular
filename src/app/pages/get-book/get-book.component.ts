@@ -4,7 +4,7 @@ import { ApiService } from 'src/app/services/api.service';
 
 
 @Component({
-  selector: 'app-get-book',
+  selector: 'ngbd-alert-basic',
   templateUrl: './get-book.component.html',
   styleUrls: ['./get-book.component.css']
 })
@@ -14,7 +14,8 @@ export class GetBookComponent implements OnInit {
 
   books: Book[];
   bookSelected: string;
-  paramSelected: string;
+  paramSelected: string = 'title';
+  found = true;
   bookFound: Book;
   activated;
 
@@ -31,7 +32,7 @@ export class GetBookComponent implements OnInit {
      .subscribe((data: Book) => {
        console.log(data);
        this.bookFound = data;
-     });
+     }, err => this.found = false);
   }
 
   getBooks() {
@@ -39,8 +40,7 @@ export class GetBookComponent implements OnInit {
     this.api.getBooks().subscribe((data: Book[]) => {
       console.log(data);
       this.books = data;
-    });
+    }, err => alert("No hay libros"));
   }
-
 
 }

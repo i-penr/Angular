@@ -16,5 +16,11 @@
         </div>
 
         <button [disabled]="!loginS.form.valid" type="submit" value="Login">Login</button>
+        <br><br>
+        <div *ngIf="!loginS.form.valid">
+            <ngb-alert [dismissible]="false">
+                <strong>!</strong> Rellena todos los campos
+            </ngb-alert>
+        </div>
     </form>
 </div>

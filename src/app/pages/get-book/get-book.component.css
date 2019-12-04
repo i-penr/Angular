@@ -57,6 +57,7 @@ input::-webkit-calendar-picker-indicator {
 }
 
 .results{
+    padding-top: 5%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     line-height: 1%;

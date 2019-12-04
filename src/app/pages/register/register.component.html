@@ -33,5 +33,11 @@
         </div>
 
         <button [disabled]="!registerS.form.valid" type="submit" value="Register">Registrar</button>
+        <br><br>
+        <div *ngIf="!registerS.form.valid">
+            <ngb-alert  [dismissible]="false">
+                <strong>!</strong> Rellena todos los campos
+            </ngb-alert>
+        </div>
     </form>
 </div>

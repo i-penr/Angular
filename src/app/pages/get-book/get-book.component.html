@@ -12,22 +12,25 @@
             <input id="search" class="searchbar" type="text" name="searchbar" placeholder="Busca un libro..."
                 list="booksOpt" autocomplete="off" [(ngModel)]='bookSelected'>
             <datalist class="datalist" id="booksOpt" name="dataL" ngDefaultControl>
-                <option *ngFor="let book of books" name="option" [value]="book.title">
-                    Autor {{ book.author }} | Desc. {{ book.description }} | Precio {{ book.price }} | Edit.
+                <option *ngFor="let book of books; index as i" name="option" [value]="book.title">
+                    Título {{ book.title }} | Autor {{ book.author }} | Desc. {{ book.description }} | Precio
+                    {{ book.price }} | Edit.
                     {{ book.editorial }} | ISBN {{ book.isbn }}
                 </option>
             </datalist>
             <button class="button" type="submit" value="submit">Buscar</button>
-            <div *ngIf="bookFound">
-                <div *ngFor="let book of bookFound">
-                    <h2 class="results">Título: {{ book.title }}</h2><br>
-                    <h2 class="results">Autor: {{ book.author }}</h2><br>
-                    <h2 class="results">ISBN: {{ book.isbn }}</h2><br>
-                    <h2 class="results">Descripción: {{ book.description }}</h2><br>
-                    <h2 class="results">Editorial: {{ book.editorial }}</h2><br>
-                    <h2 class="results">Precio: {{ book.price }} €</h2><br><br>
-                </div>
+            <div *ngFor="let book of bookFound">
+                <h2 class="results">Título: {{ book.title }}</h2><br>
+                <h2 class="results">Autor: {{ book.author }}</h2><br>
+                <h2 class="results">ISBN: {{ book.isbn }}</h2><br>
+                <h2 class="results">Descripción: {{ book.description }}</h2><br>
+                <h2 class="results">Editorial: {{ book.editorial }}</h2><br>
+                <h2 class="results">Precio: {{ book.price }} €</h2><br><br>
             </div>
+            <div *ngIf="!found">
+                <ngb-alert [dismissible]="false"><strong>!</strong> No se han encontrado libros</ngb-alert>
+            </div>
+
         </form>
     </div>
 

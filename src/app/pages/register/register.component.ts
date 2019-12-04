@@ -8,6 +8,7 @@ import { User } from "src/app/classes/user";
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
+
 export class RegisterComponent implements OnInit {
 
   constructor(private api: ApiService, private router: Router) { }
